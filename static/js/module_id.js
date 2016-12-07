@@ -1,8 +1,17 @@
-requirejs.config({
+require.config({
     baseUrl: 'static/js',
     paths: {
-        UI:     'uikit/uikit',
         jquery: 'jquery-3.1.1.min',
+        UI:     'uikit/uikit'
 
+    },
+    shim: {
+
+        uikit: {
+            deps: ['jquery'],
+            exports: 'UI'
+        }
     }
 });
+
+window.kh_dict = {};
